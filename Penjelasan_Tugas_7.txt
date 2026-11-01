@@ -1,0 +1,34 @@
+TUGAS 7 — AJAX DAN KONSUMSI API EKSTERNAL/MOCK
+Kemas Faris Rahadiansyah
+NIM: 103022300040
+Aplikasi: PMB Nusantara
+
+1. Endpoint dan alasan pemilihan
+
+Fitur Informasi PMB mengambil data secara asinkron pada aplikasi PMB Nusantara. Endpoint yang digunakan adalah GET /data/informasi-pmb.json. Endpoint ini merupakan mock API berupa file JSON yang disajikan melalui HTTP oleh server aplikasi, bukan data dari layanan PMB resmi. Isinya adalah tiga informasi contoh mengenai berkas pendaftaran, verifikasi, dan daftar ulang.
+
+Mock ini dipilih karena informasi tersebut sesuai dengan tema penerimaan mahasiswa baru. Mock tidak membutuhkan API key atau pendaftaran layanan dan tidak bergantung pada API publik. Walaupun data berada dalam proyek yang sama, pengambilannya tetap dilakukan secara asinkron melalui fetch(), bukan import langsung.
+
+2. Penanganan loading dan error
+
+Kode ada di src/components/InformasiPMB.jsx. State informasi menyimpan hasil JSON, sedangkan state status mengatur tampilan loading, success, dan error.
+
+Ketika komponen pertama kali tampil, status dimulai dari loading. useEffect() memanggil fungsi muatInformasi(). Selama request berjalan, pengguna melihat indikator dan tulisan “Memuat informasi PMB…”.
+
+Fungsi muatInformasi() menjalankan await fetch(), memeriksa response.ok, lalu membaca hasil dengan response.json(). Pemeriksaan response.ok diperlukan karena fetch tidak otomatis melempar error ketika server mengembalikan HTTP 404 atau 503. Struktur JSON juga diperiksa sebelum dipakai.
+
+Jika berhasil, hasilnya disimpan ke state informasi dan status berubah menjadi success. Data ditampilkan sebagai daftar dengan informasi.map(); setiap item memakai item.id sebagai key unik.
+
+Jika request jaringan, respons HTTP, JSON, atau struktur data bermasalah, catch mengubah status menjadi error. Aplikasi menampilkan pesan kegagalan yang jelas dan tombol Coba Lagi. Tombol ini hanya muncul pada kondisi error. Saat diklik, status kembali menjadi loading dan muatInformasi() dijalankan ulang.
+
+AbortController digunakan untuk membatalkan request ketika komponen dilepas. Respons array kosong ditampilkan sebagai “Belum ada informasi PMB.”
+
+3. Bukti tangkapan layar
+
+Screenshot/01_Loading.png: request JSON ditahan sementara pada browser pengujian sehingga indikator loading terlihat.
+Screenshot/02_Success.png: respons dari endpoint asli berhasil diterima dan tiga informasi tampil.
+Screenshot/03_Error.png: browser pengujian mensimulasikan respons HTTP 503 sehingga pesan error dan tombol Coba Lagi tampil.
+Screenshot/04_Mobile.png: bukti tambahan tampilan seluler, tidak wajib dikumpulkan.
+
+Simulasi hanya dilakukan saat pengujian browser. Endpoint pada source code tetap benar dan tidak diberi jeda buatan.
+

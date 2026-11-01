@@ -1,0 +1,20 @@
+[
+  {
+    "id": "berkas-pendaftaran",
+    "kategori": "Berkas",
+    "judul": "Siapkan dokumen pendaftaran",
+    "isi": "Periksa kembali identitas, ijazah atau surat keterangan lulus, dan pasfoto sebelum menyerahkan berkas."
+  },
+  {
+    "id": "cek-verifikasi",
+    "kategori": "Verifikasi",
+    "judul": "Pantau kelengkapan berkas",
+    "isi": "Jika status Berkas Tidak Lengkap, perbaiki dokumen sesuai catatan petugas sebelum melanjutkan proses seleksi."
+  },
+  {
+    "id": "daftar-ulang",
+    "kategori": "Daftar ulang",
+    "judul": "Daftar ulang setelah lolos verifikasi",
+    "isi": "Setelah dinyatakan lulus seleksi, ikuti petunjuk daftar ulang yang diberikan oleh petugas penerimaan."
+  }
+]

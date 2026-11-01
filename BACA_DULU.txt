@@ -1,0 +1,25 @@
+TUGAS 7 — AJAX DAN KONSUMSI API
+
+PMB Nusantara
+Kemas Faris Rahadiansyah
+NIM: 103022300040
+
+ISI PAKET
+- pmb-nusantara-frontend: source aplikasi React + Vite.
+- Screenshot/01_Loading.png: kondisi memuat data.
+- Screenshot/02_Success.png: kondisi berhasil.
+- Screenshot/03_Error.png: kondisi gagal dan tombol Coba Lagi.
+- Screenshot/04_Mobile.png: tampilan seluler sebagai tambahan.
+- Penjelasan_Tugas_7.txt: penjelasan endpoint dan alur kode.
+
+CARA MENJALANKAN
+1. Buka terminal di folder pmb-nusantara-frontend.
+2. Jalankan npm ci.
+3. Jalankan npm run dev.
+4. Buka alamat yang ditampilkan Vite.
+5. Fitur pengambilan data ada di bagian Informasi PMB.
+
+PENGUMPULAN
+1. Upload source aplikasi ke repository GitHub tanpa node_modules dan dist.
+2. Kumpulkan link repository serta screenshot 01_Loading.png, 02_Success.png, dan 03_Error.png.
+3. Gunakan Penjelasan_Tugas_7.txt untuk mempelajari endpoint dan penanganan kondisi API.
